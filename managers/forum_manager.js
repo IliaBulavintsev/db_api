@@ -60,4 +60,5 @@ class ForumManager {
         utils.get_list(success,error,getlist_options);
     }
 }
+
 exports.ForumManager = ForumManager;

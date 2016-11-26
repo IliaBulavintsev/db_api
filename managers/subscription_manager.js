@@ -58,4 +58,5 @@ class SubscriptionManager{
         })
     }
 }
+
 module.exports.SubscriptionManager =SubscriptionManager;

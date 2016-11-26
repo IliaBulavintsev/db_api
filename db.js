@@ -1,4 +1,3 @@
-
 // Подключение к базе файл mysql.j
 "use strict";
 //var Promise = require('promise');

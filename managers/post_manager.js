@@ -27,4 +27,5 @@ class PostManager {
         utils.get_list(success,error,getlist_options);
     }
 }
+
 exports.PostManager = PostManager;

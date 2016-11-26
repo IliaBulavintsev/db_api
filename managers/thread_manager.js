@@ -80,4 +80,5 @@ class ThreadManager {
         }
     }
 }
+
 exports.ThreadManager = ThreadManager;

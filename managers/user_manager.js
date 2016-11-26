@@ -27,4 +27,5 @@ class UserManager {
         utils.get_list(success,error,getlist_options);
     }
 }
+
 exports.UserManager = UserManager;
