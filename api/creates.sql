@@ -90,21 +90,8 @@ CONSTRAINT Posts_ibfk_3 FOREIGN KEY (user)   REFERENCES Users   (email) ON DELET
 ) DEFAULT CHARSET=utf8;
 
 
-<<<<<<< HEAD
-DELIMITER |
---DROP TRIGGER IF EXISTS update_posts_count_oninsert|
---CREATE TRIGGER update_posts_count_oninsert AFTER INSERT ON Posts FOR EACH ROW
---BEGIN
---    IF (NEW.stateMask & 2) = 0 THEN
---        UPDATE Threads SET posts=posts+1 WHERE id= NEW.thread;
---    END IF;
---END|
-
-DROP TRIGGER IF EXISTS update_posts_count_onupdate|
-=======
 DELIMITER //
 DROP TRIGGER IF EXISTS update_posts_count_onupdate//
->>>>>>> b9a21fc536a14fcbd1d2cabc66b98cdc947d606b
 CREATE TRIGGER update_posts_count_onupdate AFTER UPDATE ON Posts FOR EACH ROW
 BEGIN
     IF ((NEW.stateMask & 2) != 0  AND (OLD.stateMask & 2) = 0) THEN
@@ -112,11 +99,7 @@ BEGIN
     ELSEIF ((NEW.stateMask & 2) = 0  AND (OLD.stateMask & 2) != 0) THEN
         UPDATE Threads SET posts=posts + 1 WHERE id= NEW.thread;
     END IF;
-<<<<<<< HEAD
-END|
-=======
 END //
->>>>>>> b9a21fc536a14fcbd1d2cabc66b98cdc947d606b
 DELIMITER ;
 
 
